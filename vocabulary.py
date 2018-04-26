@@ -1,6 +1,12 @@
 import nltk
 import pickle
 import os.path
+
+#so that we can access pycocotools
+import sys
+sys.path
+sys.path.append('../cocoapi/PythonAPI/')
+
 from pycocotools.coco import COCO
 from collections import Counter
 
