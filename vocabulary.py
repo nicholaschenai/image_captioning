@@ -4,7 +4,6 @@ import os.path
 
 #so that we can access pycocotools
 import sys
-sys.path
 sys.path.append('../cocoapi/PythonAPI/')
 
 from pycocotools.coco import COCO
@@ -18,7 +17,7 @@ class Vocabulary(object):
         start_word="<start>",
         end_word="<end>",
         unk_word="<unk>",
-        annotations_file='../cocoapi/annotations/captions_train2014.json',
+        annotations_file="../cocoapi/annotations/captions_train2014.json",
         vocab_from_file=False):
         """Initialize the vocabulary.
         Args:
@@ -37,6 +36,9 @@ class Vocabulary(object):
         self.end_word = end_word
         self.unk_word = unk_word
         self.annotations_file = annotations_file
+        #print("Hi")
+        #print(self.annotations_file)
+        #print(annotations_file)
         self.vocab_from_file = vocab_from_file
         self.get_vocab()
 
