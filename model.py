@@ -39,6 +39,7 @@ class DecoderRNN(nn.Module):
         for i in range(max_len):
             hiddens, states = self.lstm(inputs, states)
             outputs = self.linear(hiddens.squeeze(1))
+            # Returns entry of the output with the highest score
             predicted = outputs.max(1)[1]
             sampled_ids.append(predicted.data[0])
             inputs = self.embed(predicted)
